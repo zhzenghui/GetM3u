@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>933843B2-30A6-4569-9F6B-CE8FC2879031</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GetM3u</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2A848205-E325-42B6-90A4-D2BF453619F2</key>
+		<string>https://github.com/zhzenghui/GetM3u.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GetM3u.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2A848205-E325-42B6-90A4-D2BF453619F2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zhzenghui/GetM3u.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2A848205-E325-42B6-90A4-D2BF453619F2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2A848205-E325-42B6-90A4-D2BF453619F2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GetM3u</string>
+		</dict>
+	</array>
+</dict>
+</plist>
