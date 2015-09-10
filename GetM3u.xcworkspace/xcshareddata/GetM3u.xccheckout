@@ -10,29 +10,29 @@
 	<string>GetM3u</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2A848205-E325-42B6-90A4-D2BF453619F2</key>
+		<key>EE40D5EB9802A33E010A036ABB1F6E8B2948BB49</key>
 		<string>https://github.com/zhzenghui/GetM3u.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GetM3u.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2A848205-E325-42B6-90A4-D2BF453619F2</key>
+		<key>EE40D5EB9802A33E010A036ABB1F6E8B2948BB49</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/zhzenghui/GetM3u.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2A848205-E325-42B6-90A4-D2BF453619F2</string>
+	<string>EE40D5EB9802A33E010A036ABB1F6E8B2948BB49</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2A848205-E325-42B6-90A4-D2BF453619F2</string>
+			<string>EE40D5EB9802A33E010A036ABB1F6E8B2948BB49</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GetM3u</string>
 		</dict>

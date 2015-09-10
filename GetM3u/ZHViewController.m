@@ -46,16 +46,16 @@
 {
     [super viewDidLoad];
 
-//    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-//    
-//    
-//    NSURL *url = [NSURL URLWithString:@"http://v.youku.com/v_show/id_XNzcyMDAxMzQw.html"];
-//    _webView.delegate = self;
-//    [_webView loadRequest:[NSURLRequest  requestWithURL:url  ]];
-//    
+    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     
     
-    [self gethtmlM3u8];
+    NSURL *url = [NSURL URLWithString:@"http://v.youku.com/v_show/id_XNzcyMDAxMzQw.html"];
+    _webView.delegate = self;
+    [_webView loadRequest:[NSURLRequest  requestWithURL:url  ]];
+//
+    
+    
+//    [self gethtmlM3u8];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +68,7 @@
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     
-    NSLog(@"%@",      webView.request);
+//    NSLog(@"%@",      webView.request);
     
 }
 
