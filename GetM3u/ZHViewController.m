@@ -49,7 +49,7 @@
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     
     
-    NSURL *url = [NSURL URLWithString:@"http://v.youku.com/v_show/id_XNzcyMDAxMzQw.html"];
+    NSURL *url = [NSURL URLWithString:@"http://v.youku.com/v_show/id_XMTM2MTIwODM4MA==.html"];
     _webView.delegate = self;
     [_webView loadRequest:[NSURLRequest  requestWithURL:url  ]];
 //
