@@ -4,5 +4,6 @@ language: objective-c
 before_script:
 - ./scripts/add-key.sh
 
-xcode_workspace: GetM3u.xcworkspace
-xcode_scheme: GetM3u
+script:
+- xcodebuild -workspace GetM3u.xcworkspace -scheme GetM3u -sdk iphoneos  -configuration
+  Debug 
