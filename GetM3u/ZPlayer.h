@@ -29,14 +29,10 @@ typedef NS_ENUM(NSUInteger, ZPlayerFailedStatus) {
     ZPlayerFailedCurrentItem,
 };
 
-NSString * const kStatus                        = @"status";
-NSString * const kRateKey                       = @"rate";
-NSString * const kCurrentItemKey                = @"currentItem";
-NSString * const kLoadedTimeRanges              = @"loadedTimeRanges";
 
-NSString * const ZPlayerErrorDomain             = @"ZPlayerErrorDomain";
 
-NSString * const ZFileScheme                    = @"customscheme";
+extern NSString * const ZFileScheme;
+
 
 @protocol ZPlayerDelegate;
 
@@ -49,21 +45,26 @@ NSString * const ZFileScheme                    = @"customscheme";
 
 
 
+- (void)fetchAndPlayFileAtURL:(NSURL *)fileURL ;
+
+- (void)play;
+- (void)pause;
+- (void)stop;
 + (ZPlayer *)player;
 
 @end
-//@protocol ZPlayerDelegate <NSObject>
-//
-//- (void)player:(ZPlayer *)player didFailWithStatus:(ZPlayerFailedStatus)status error:(NSError *)error;
-//- (void)player:(ZPlayer*)player didChangeReadyToPlayStatus:(ZPlayerReadyToPlayStatus)status;
-//
-//- (void)player:(ZPlayer*)player didChangeRate:(float)rate;
-//
-//- (void)player:(ZPlayer*)player didPreLoadCurrentItemWithProgress:(float)progress;
-//- (void)playerDidChangeCurrentItem:(ZPlayer*)player;
-//- (void)playerDidReachEnd:(ZPlayer*)player;
-//
-//- (void)playerDidChangeScrubberTime:(ZPlayer*)player;
-//- (void)playerDidChangeClockTime:(ZPlayer*)player;
-//
-//@end
+@protocol ZPlayerDelegate <NSObject>
+
+- (void)player:(ZPlayer *)player didFailWithStatus:(ZPlayerFailedStatus)status error:(NSError *)error;
+- (void)player:(ZPlayer*)player didChangeReadyToPlayStatus:(ZPlayerReadyToPlayStatus)status;
+
+- (void)player:(ZPlayer*)player didChangeRate:(float)rate;
+
+- (void)player:(ZPlayer*)player didPreLoadCurrentItemWithProgress:(float)progress;
+- (void)playerDidChangeCurrentItem:(ZPlayer*)player;
+- (void)playerDidReachEnd:(ZPlayer*)player;
+
+- (void)playerDidChangeScrubberTime:(ZPlayer*)player;
+- (void)playerDidChangeClockTime:(ZPlayer*)player;
+
+@end

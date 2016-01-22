@@ -21,7 +21,7 @@
 
 }
 
-@property(nonatomic, strong) AVPlayer *player;
+@property(nonatomic, strong) ZPlayer *player;
 @property(nonatomic, strong) AVAssetExportSession *exportSession;
 @property(nonatomic, strong) NSString  *tmpVideoPath;
 
@@ -66,6 +66,15 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 
 
 
+- (instancetype)initWithPlayer:(ZPlayer *)player{
+    self = [super init];
+    if(self){
+        self.player = player;
+        self.player.delegate = self;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -90,33 +99,45 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 //    NSURL *url =
 //    
 //    
-    NSURL *movieURL =  [NSURL URLWithString:@"http://pl.youku.com/playlist/m3u8?vid=340302095&type=mp4&ts=1453427391&keyframe=0&ep=dCaRGU2PUc0J5STdgD8bby3rdiYKXP0O9hyFg9JrBdQmQey7&sid=6453427390728128192a5&token=2944&ctype=12&ev=1&oip=1981419708"];;
-    movieURL =  [NSURL URLWithString:@"http://v.cdn.vine.co/r/videos/BA059548A51258987840487243776_4d6caa19305.1.0.12936937827581777625.mp4"];;
+    NSURL *movieURL =  [NSURL URLWithString:@"http://pl.youku.com/playlist/m3u8?vid=340302095&type=mp4&ts=1453427391&keyframe=0&ep=dCaRGU2PUc0J5STdgD8bby3rdiYKXP0O9hyFg9JrBdQmQey7&sid=6453427390728128192a5&token=2944&ctype=12&ev=1&oip=1981419708"];
+    
+    NSString *s = [NSString stringWithFormat: @"%@://v.cdn.vine.co/r/videos/BA059548A51258987840487243776_4d6caa19305.1.0.12936937827581777625.mp4", ZFileScheme];
+    s = @"http://v.cdn.vine.co/r/videos/BA059548A51258987840487243776_4d6caa19305.1.0.12936937827581777625.mp4";
+    movieURL =  [NSURL URLWithString:s];;
 
     
     
-    AVAsset *asset = [AVAsset assetWithURL:movieURL];
-    AVPlayerItem *item = [[AVPlayerItem alloc] initWithAsset:asset];
-//    
+//    AVAsset *asset = [AVAsset assetWithURL:movieURL];
+//    AVPlayerItem *item = [[AVPlayerItem alloc] initWithAsset:asset];
+
+    self.player = [[ZPlayer alloc] init];
+
+    [self.player fetchAndPlayFileAtURL:movieURL ];
+
+    
+    
+    
+    //
 //    
 //    _player = [[AVPlayer alloc] initWithPlayerItem:item];
 //
-////    ZPlayerView *pv = [[ZPlayerView alloc] init];
+//    ZPlayerView *pv = [[ZPlayerView alloc] init];
 ////    [pv setPlayer:_player];
 ////    
 //    AVPlayerLayer *playLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
 ////    pv.frame = self.view.frame;
 ////
-//    UIView *pv = [[UIView alloc] initWithFrame:self.view.frame];
+    UIView *pv = [[UIView alloc] initWithFrame:self.view.frame];
 //    pv.backgroundColor = [UIColor blackColor];
 //    [pv.layer addSublayer:playLayer];
+//
 //    
-//    
-//    [self.view addSubview:pv];
-//    
-//    [_player play];
+    [self.view addSubview:pv];
+//
+    [self.player play];
     
     
+    return;
     
     
 //    AVAssetExportSession *es = [[AVAssetExportSession alloc] initWithAsset:asset presetName:AVAssetExportPresetLowQuality];
@@ -321,26 +342,6 @@ NSLog(@"Web获取视频地址信息=======%@",str);
 
 
 #pragma mark - AVAssetResourceLoaderDelegate
-
-- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest{
-    NSURL *resourceURL = [loadingRequest.request URL];
-    if([resourceURL.scheme isEqualToString:ZFileScheme]){
-//        LSFilePlayerResourceLoader *loader = [self resourceLoaderForRequest:loadingRequest];
-//        if(loader==nil){
-//            loader = [[LSFilePlayerResourceLoader alloc] initWithResourceURL:resourceURL session:self.session];
-//            loader.delegate = self;
-//            [self.resourceLoaders setObject:loader forKey:[self keyForResourceLoaderWithURL:resourceURL]];
-//        }
-//        [loader addRequest:loadingRequest];
-        return YES;
-    }
-    return NO;
-}
-
-- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest{
-//    LSFilePlayerResourceLoader *loader = [self resourceLoaderForRequest:loadingRequest];
-//    [loader removeRequest:loadingRequest];
-}
 
 
 

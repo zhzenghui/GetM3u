@@ -8,10 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class ZPlayer;
+
 @interface ZHViewController : UIViewController<UIWebViewDelegate>
 {
 }
 
 @property(nonatomic, retain)     UIWebView *webView;
+
+
+
+- (instancetype)initWithPlayer:(ZPlayer *)player;
+
+@property (nonatomic, readonly, strong) ZPlayer *player;
+
 
 @end
