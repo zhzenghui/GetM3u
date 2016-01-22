@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1412020A1C52103800C8719E /* ZPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 141202091C52103800C8719E /* ZPlayer.m */; };
+		1412020D1C52128D00C8719E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1412020B1C52128D00C8719E /* Launch Screen.storyboard */; };
+		141202101C52149200C8719E /* ZPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412020F1C52149200C8719E /* ZPlayerViewController.m */; };
+		141202131C5215A000C8719E /* ZFilePlayerResourceLoaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 141202121C5215A000C8719E /* ZFilePlayerResourceLoaderDelegate.m */; };
+		141202161C5218BC00C8719E /* NSObject+LSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 141202151C5218BC00C8719E /* NSObject+LSAdditions.m */; };
 		14F8DC8B1C50B12B004BB071 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 14F8DC8A1C50B12B004BB071 /* .travis.yml */; };
 		3A91371CDACF43739F0DFB70 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5937FE688C0409C844817E7 /* libPods.a */; };
 		C035B7D119B7234E006177B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C035B7D019B7234E006177B9 /* Foundation.framework */; };
@@ -36,8 +41,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		141202081C52103800C8719E /* ZPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPlayer.h; sourceTree = "<group>"; };
+		141202091C52103800C8719E /* ZPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPlayer.m; sourceTree = "<group>"; };
+		1412020C1C52128D00C8719E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1412020E1C52149200C8719E /* ZPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPlayerViewController.h; sourceTree = "<group>"; };
+		1412020F1C52149200C8719E /* ZPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPlayerViewController.m; sourceTree = "<group>"; };
+		141202111C5215A000C8719E /* ZFilePlayerResourceLoaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFilePlayerResourceLoaderDelegate.h; sourceTree = "<group>"; };
+		141202121C5215A000C8719E /* ZFilePlayerResourceLoaderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFilePlayerResourceLoaderDelegate.m; sourceTree = "<group>"; };
+		141202141C5218BC00C8719E /* NSObject+LSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LSAdditions.h"; sourceTree = "<group>"; };
+		141202151C5218BC00C8719E /* NSObject+LSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LSAdditions.m"; sourceTree = "<group>"; };
 		14F8DC8A1C50B12B004BB071 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
-		5A0ADFC32FAC403F957C5CF7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		34BB39902C7ED4480AC47F02 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C035B7CD19B7234E006177B9 /* GetM3u.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetM3u.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C035B7D019B7234E006177B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C035B7D219B7234E006177B9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,6 +71,7 @@
 		C035B7F719B7234E006177B9 /* GetM3uTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GetM3uTests-Info.plist"; sourceTree = "<group>"; };
 		C035B7F919B7234E006177B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C035B7FB19B7234E006177B9 /* GetM3uTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetM3uTests.m; sourceTree = "<group>"; };
+		CF8E1227CBEA0BAD317CE009 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E5937FE688C0409C844817E7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21926713F7355E9027FEEE09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34BB39902C7ED4480AC47F02 /* Pods.debug.xcconfig */,
+				CF8E1227CBEA0BAD317CE009 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C035B7C419B7234E006177B9 = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +116,7 @@
 				C035B7F519B7234E006177B9 /* GetM3uTests */,
 				C035B7CF19B7234E006177B9 /* Frameworks */,
 				C035B7CE19B7234E006177B9 /* Products */,
-				5A0ADFC32FAC403F957C5CF7 /* Pods.xcconfig */,
+				21926713F7355E9027FEEE09 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,8 +147,17 @@
 				C035B7DF19B7234E006177B9 /* ZHAppDelegate.h */,
 				C035B7E019B7234E006177B9 /* ZHAppDelegate.m */,
 				C035B7E219B7234E006177B9 /* Main.storyboard */,
+				1412020B1C52128D00C8719E /* Launch Screen.storyboard */,
 				C035B7E519B7234E006177B9 /* ZHViewController.h */,
 				C035B7E619B7234E006177B9 /* ZHViewController.m */,
+				141202081C52103800C8719E /* ZPlayer.h */,
+				141202091C52103800C8719E /* ZPlayer.m */,
+				1412020E1C52149200C8719E /* ZPlayerViewController.h */,
+				1412020F1C52149200C8719E /* ZPlayerViewController.m */,
+				141202141C5218BC00C8719E /* NSObject+LSAdditions.h */,
+				141202151C5218BC00C8719E /* NSObject+LSAdditions.m */,
+				141202111C5215A000C8719E /* ZFilePlayerResourceLoaderDelegate.h */,
+				141202121C5215A000C8719E /* ZFilePlayerResourceLoaderDelegate.m */,
 				C035B7E819B7234E006177B9 /* Images.xcassets */,
 				C035B7D719B7234E006177B9 /* Supporting Files */,
 			);
@@ -246,6 +279,7 @@
 				C035B7E919B7234E006177B9 /* Images.xcassets in Resources */,
 				C035B7DB19B7234E006177B9 /* InfoPlist.strings in Resources */,
 				14F8DC8B1C50B12B004BB071 /* .travis.yml in Resources */,
+				1412020D1C52128D00C8719E /* Launch Screen.storyboard in Resources */,
 				C035B7E419B7234E006177B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -299,6 +333,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C035B7E719B7234E006177B9 /* ZHViewController.m in Sources */,
+				1412020A1C52103800C8719E /* ZPlayer.m in Sources */,
+				141202161C5218BC00C8719E /* NSObject+LSAdditions.m in Sources */,
+				141202131C5215A000C8719E /* ZFilePlayerResourceLoaderDelegate.m in Sources */,
+				141202101C52149200C8719E /* ZPlayerViewController.m in Sources */,
 				C035B7E119B7234E006177B9 /* ZHAppDelegate.m in Sources */,
 				C035B7DD19B7234E006177B9 /* main.m in Sources */,
 			);
@@ -323,6 +361,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1412020B1C52128D00C8719E /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1412020C1C52128D00C8719E /* Base */,
+			);
+			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
 		C035B7D919B7234E006177B9 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -422,7 +468,7 @@
 		};
 		C035B80019B7234E006177B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A0ADFC32FAC403F957C5CF7 /* Pods.xcconfig */;
+			baseConfigurationReference = 34BB39902C7ED4480AC47F02 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -441,7 +487,7 @@
 		};
 		C035B80119B7234E006177B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A0ADFC32FAC403F957C5CF7 /* Pods.xcconfig */;
+			baseConfigurationReference = CF8E1227CBEA0BAD317CE009 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
