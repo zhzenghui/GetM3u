@@ -293,7 +293,7 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-
+//  jxxx
     
     
     NSString *lJs = @"document.documentElement.innerHTML";
