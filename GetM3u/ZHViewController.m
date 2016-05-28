@@ -65,29 +65,33 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 }
 
 
-
-- (instancetype)initWithPlayer:(ZPlayer *)player{
-    self = [super init];
-    if(self){
-        self.player = player;
-        self.player.delegate = self;
-    }
-    return self;
-}
+//
+//- (instancetype)initWithPlayer:(ZPlayer *)player{
+//    self = [super init];
+//    if(self){
+//        self.player = player;
+//        self.player.delegate = self;
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    _webView.backgroundColor = [UIColor orangeColor];
     
+    NSURL *url = [NSURL URLWithString:@"http://v.youku.com/v_show/id_XOTIwMTgwNTYw.html"];
+//    url = [NSURL URLWithString:@"http://pan.baidu.com/share/link?shareid=3589523377&uk=56589384&fid=856793824053437"];
+//    http://v.pptv.com/show/J6Mwrxd97SuODHQ.html
     
-    NSURL *url = [NSURL URLWithString:@"http://v.youku.com/v_show/id_XMTM2MTIwODM4MA==.html"];
+    url = [NSURL URLWithString:@"http://v.pptv.com/show/J6Mwrxd97SuODHQ.html"];
     _webView.delegate = self;
     [_webView loadRequest:[NSURLRequest  requestWithURL:url  ]];
 //
     
-    
+    [self.view addSubview:_webView];
 //    [self gethtmlM3u8];
     
     
@@ -99,161 +103,161 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 //    NSURL *url =
 //    
 //    
-    NSURL *movieURL =  [NSURL URLWithString:@"http://pl.youku.com/playlist/m3u8?vid=340302095&type=mp4&ts=1453427391&keyframe=0&ep=dCaRGU2PUc0J5STdgD8bby3rdiYKXP0O9hyFg9JrBdQmQey7&sid=6453427390728128192a5&token=2944&ctype=12&ev=1&oip=1981419708"];
-    
-    NSString *s = [NSString stringWithFormat: @"%@://v.cdn.vine.co/r/videos/BA059548A51258987840487243776_4d6caa19305.1.0.12936937827581777625.mp4", ZFileScheme];
-    s = @"http://v.cdn.vine.co/r/videos/BA059548A51258987840487243776_4d6caa19305.1.0.12936937827581777625.mp4";
-    movieURL =  [NSURL URLWithString:s];;
-
-    
-    
-//    AVAsset *asset = [AVAsset assetWithURL:movieURL];
-//    AVPlayerItem *item = [[AVPlayerItem alloc] initWithAsset:asset];
-
-    self.player = [[ZPlayer alloc] init];
-
-    [self.player fetchAndPlayFileAtURL:movieURL ];
-
-    
-    
-    
-    //
+//    NSURL *movieURL =  [NSURL URLWithString:@"http://pl.youku.com/playlist/m3u8?vid=340302095&type=mp4&ts=1453427391&keyframe=0&ep=dCaRGU2PUc0J5STdgD8bby3rdiYKXP0O9hyFg9JrBdQmQey7&sid=6453427390728128192a5&token=2944&ctype=12&ev=1&oip=1981419708"];
 //    
-//    _player = [[AVPlayer alloc] initWithPlayerItem:item];
+//    NSString *s = [NSString stringWithFormat: @"%@://v.cdn.vine.co/r/videos/BA059548A51258987840487243776_4d6caa19305.1.0.12936937827581777625.mp4", ZFileScheme];
+//    s = @"http://v.cdn.vine.co/r/videos/BA059548A51258987840487243776_4d6caa19305.1.0.12936937827581777625.mp4";
+//    movieURL =  [NSURL URLWithString:s];;
 //
-//    ZPlayerView *pv = [[ZPlayerView alloc] init];
-////    [pv setPlayer:_player];
+//    
+//    
+////    AVAsset *asset = [AVAsset assetWithURL:movieURL];
+////    AVPlayerItem *item = [[AVPlayerItem alloc] initWithAsset:asset];
+//
+//    self.player = [[ZPlayer alloc] init];
+//
+//    [self.player fetchAndPlayFileAtURL:movieURL ];
+//
+//    
+//    
+//    
+//    //
 ////    
-//    AVPlayerLayer *playLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
-////    pv.frame = self.view.frame;
+////    _player = [[AVPlayer alloc] initWithPlayerItem:item];
 ////
-    UIView *pv = [[UIView alloc] initWithFrame:self.view.frame];
-//    pv.backgroundColor = [UIColor blackColor];
-//    [pv.layer addSublayer:playLayer];
-//
+////    ZPlayerView *pv = [[ZPlayerView alloc] init];
+//////    [pv setPlayer:_player];
+//////    
+////    AVPlayerLayer *playLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
+//////    pv.frame = self.view.frame;
+//////
+//    UIView *pv = [[UIView alloc] initWithFrame:self.view.frame];
+////    pv.backgroundColor = [UIColor blackColor];
+////    [pv.layer addSublayer:playLayer];
+////
+////    
+//    [self.view addSubview:pv];
+////
+//    [self.player play];
 //    
-    [self.view addSubview:pv];
-//
-    [self.player play];
-    
-    
-    return;
-    
-    
-//    AVAssetExportSession *es = [[AVAssetExportSession alloc] initWithAsset:asset presetName:AVAssetExportPresetLowQuality];
 //    
-    NSString *outPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"out.mp4"];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    [fileManager removeItemAtPath:outPath error:NULL];
-    
-    
-    self.tmpVideoPath = outPath;
+//    return;
+//    
+//    
+////    AVAssetExportSession *es = [[AVAssetExportSession alloc] initWithAsset:asset presetName:AVAssetExportPresetLowQuality];
+////    
+//    NSString *outPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"out.mp4"];
+//    
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    [fileManager removeItemAtPath:outPath error:NULL];
+//    
+//    
+//    self.tmpVideoPath = outPath;
+////
+////    es.outputFileType = @"com.apple.quicktime-movie";
+////    es.outputURL = [[NSURL alloc] initFileURLWithPath:outPath];
+////    NSLog(@"exporting to %@",outPath);
+////    [es exportAsynchronouslyWithCompletionHandler:^{
+////        NSString *status = @"";
+////        
+////        if( es.status == AVAssetExportSessionStatusUnknown ) status = @"AVAssetExportSessionStatusUnknown";
+////        else if( es.status == AVAssetExportSessionStatusWaiting ) status = @"AVAssetExportSessionStatusWaiting";
+////        else if( es.status == AVAssetExportSessionStatusExporting ) status = @"AVAssetExportSessionStatusExporting";
+////        else if( es.status == AVAssetExportSessionStatusCompleted ) status = @"AVAssetExportSessionStatusCompleted";
+////        else if( es.status == AVAssetExportSessionStatusFailed ) status = @"AVAssetExportSessionStatusFailed";
+////        else if( es.status == AVAssetExportSessionStatusCancelled ) status = @"AVAssetExportSessionStatusCancelled";
+////        
+////        NSLog(@"done exporting to %@ status %d = %@ (%@)",outPath,es.status, status,[[es error] localizedDescription]);
+////    }];
 //
-//    es.outputFileType = @"com.apple.quicktime-movie";
-//    es.outputURL = [[NSURL alloc] initFileURLWithPath:outPath];
-//    NSLog(@"exporting to %@",outPath);
-//    [es exportAsynchronouslyWithCompletionHandler:^{
-//        NSString *status = @"";
-//        
-//        if( es.status == AVAssetExportSessionStatusUnknown ) status = @"AVAssetExportSessionStatusUnknown";
-//        else if( es.status == AVAssetExportSessionStatusWaiting ) status = @"AVAssetExportSessionStatusWaiting";
-//        else if( es.status == AVAssetExportSessionStatusExporting ) status = @"AVAssetExportSessionStatusExporting";
-//        else if( es.status == AVAssetExportSessionStatusCompleted ) status = @"AVAssetExportSessionStatusCompleted";
-//        else if( es.status == AVAssetExportSessionStatusFailed ) status = @"AVAssetExportSessionStatusFailed";
-//        else if( es.status == AVAssetExportSessionStatusCancelled ) status = @"AVAssetExportSessionStatusCancelled";
-//        
-//        NSLog(@"done exporting to %@ status %d = %@ (%@)",outPath,es.status, status,[[es error] localizedDescription]);
+//   
+//
+//    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:movieURL options:nil];
+//    AVMutableComposition* mixComposition = [AVMutableComposition composition];
+//    
+//    AVMutableCompositionTrack *compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+//    AVAssetTrack *clipVideoTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+//    AVMutableCompositionTrack *compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+//    AVAssetTrack *clipAudioTrack = [[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+//    //If you need audio as well add the Asset Track for audio here
+//    
+//    [compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
+//    [compositionAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipAudioTrack atTime:kCMTimeZero error:nil];
+//    
+//    [compositionVideoTrack setPreferredTransform:[[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] preferredTransform]];
+//    
+//    CGSize sizeOfVideo=[[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] naturalSize];
+//    
+//    //TextLayer defines the text they want to add in Video
+//    //Text of watermark
+//    CATextLayer *textOfvideo=[[CATextLayer alloc] init];
+//    textOfvideo.string=[NSString stringWithFormat:@"Add Text"];//text is shows the text that you want add in video.
+//    textOfvideo.fontSize = 18;//fontUsed is the name of font
+//    [textOfvideo setFrame:CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height/6)];
+//    [textOfvideo setAlignmentMode:kCAAlignmentCenter];
+//    [textOfvideo setForegroundColor:[[UIColor blueColor] CGColor]];
+//    
+//    //Image of watermark
+//    UIImage *myImage=[UIImage imageNamed:@"pic.jpg"];
+//    CALayer *layerCa = [CALayer layer];
+//    layerCa.contents = (id)myImage.CGImage;
+//    layerCa.frame = CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+//    layerCa.opacity = 1.0;
+//    
+//    CALayer *optionalLayer=[CALayer layer];
+//    [optionalLayer addSublayer:textOfvideo];
+//    optionalLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+//    [optionalLayer setMasksToBounds:YES];
+//    
+//    CALayer *parentLayer=[CALayer layer];
+//    CALayer *videoLayer=[CALayer layer];
+//    parentLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+//    videoLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+//    [parentLayer addSublayer:videoLayer];
+//    [parentLayer addSublayer:optionalLayer];
+//    [parentLayer addSublayer:layerCa];
+//    
+//    AVMutableVideoComposition *videoComposition=[AVMutableVideoComposition videoComposition] ;
+//    videoComposition.frameDuration=CMTimeMake(1, 30);
+//    videoComposition.renderSize=sizeOfVideo;
+//    videoComposition.animationTool=[AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+//    
+//    AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+//    instruction.timeRange = CMTimeRangeMake(kCMTimeZero, [mixComposition duration]);
+//    AVAssetTrack *videoTrack = [[mixComposition tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+//    AVMutableVideoCompositionLayerInstruction* layerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+//    instruction.layerInstructions = [NSArray arrayWithObject:layerInstruction];
+//    videoComposition.instructions = [NSArray arrayWithObject: instruction];
+//    
+//    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
+//    NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/utput_%@.mov", [dateFormatter stringFromDate:[NSDate date]]];
+//    
+//    AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetHighestQuality];
+//    exportSession.videoComposition=videoComposition;
+//    
+//    exportSession.outputURL = [NSURL fileURLWithPath:destinationPath];
+//    exportSession.outputFileType = AVFileTypeQuickTimeMovie;
+//    [exportSession exportAsynchronouslyWithCompletionHandler:^{
+//        switch (exportSession.status)
+//        {
+//            case AVAssetExportSessionStatusCompleted:
+//                NSLog(@"Export OK");
+////                if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath)) {
+////                    UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+////                }
+//                break;
+//            case AVAssetExportSessionStatusFailed:
+//                NSLog (@"AVAssetExportSessionStatusFailed: %@", exportSession.error);
+//                break;
+//            case AVAssetExportSessionStatusCancelled:
+//                NSLog(@"Export Cancelled");
+//                break;
+//        }
 //    }];
-
-   
-
-    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:movieURL options:nil];
-    AVMutableComposition* mixComposition = [AVMutableComposition composition];
-    
-    AVMutableCompositionTrack *compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
-    AVAssetTrack *clipVideoTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
-    AVMutableCompositionTrack *compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-    AVAssetTrack *clipAudioTrack = [[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
-    //If you need audio as well add the Asset Track for audio here
-    
-    [compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
-    [compositionAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipAudioTrack atTime:kCMTimeZero error:nil];
-    
-    [compositionVideoTrack setPreferredTransform:[[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] preferredTransform]];
-    
-    CGSize sizeOfVideo=[[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] naturalSize];
-    
-    //TextLayer defines the text they want to add in Video
-    //Text of watermark
-    CATextLayer *textOfvideo=[[CATextLayer alloc] init];
-    textOfvideo.string=[NSString stringWithFormat:@"Add Text"];//text is shows the text that you want add in video.
-    textOfvideo.fontSize = 18;//fontUsed is the name of font
-    [textOfvideo setFrame:CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height/6)];
-    [textOfvideo setAlignmentMode:kCAAlignmentCenter];
-    [textOfvideo setForegroundColor:[[UIColor blueColor] CGColor]];
-    
-    //Image of watermark
-    UIImage *myImage=[UIImage imageNamed:@"pic.jpg"];
-    CALayer *layerCa = [CALayer layer];
-    layerCa.contents = (id)myImage.CGImage;
-    layerCa.frame = CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
-    layerCa.opacity = 1.0;
-    
-    CALayer *optionalLayer=[CALayer layer];
-    [optionalLayer addSublayer:textOfvideo];
-    optionalLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
-    [optionalLayer setMasksToBounds:YES];
-    
-    CALayer *parentLayer=[CALayer layer];
-    CALayer *videoLayer=[CALayer layer];
-    parentLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
-    videoLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
-    [parentLayer addSublayer:videoLayer];
-    [parentLayer addSublayer:optionalLayer];
-    [parentLayer addSublayer:layerCa];
-    
-    AVMutableVideoComposition *videoComposition=[AVMutableVideoComposition videoComposition] ;
-    videoComposition.frameDuration=CMTimeMake(1, 30);
-    videoComposition.renderSize=sizeOfVideo;
-    videoComposition.animationTool=[AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
-    
-    AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
-    instruction.timeRange = CMTimeRangeMake(kCMTimeZero, [mixComposition duration]);
-    AVAssetTrack *videoTrack = [[mixComposition tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
-    AVMutableVideoCompositionLayerInstruction* layerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
-    instruction.layerInstructions = [NSArray arrayWithObject:layerInstruction];
-    videoComposition.instructions = [NSArray arrayWithObject: instruction];
-    
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
-    NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/utput_%@.mov", [dateFormatter stringFromDate:[NSDate date]]];
-    
-    AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetHighestQuality];
-    exportSession.videoComposition=videoComposition;
-    
-    exportSession.outputURL = [NSURL fileURLWithPath:destinationPath];
-    exportSession.outputFileType = AVFileTypeQuickTimeMovie;
-    [exportSession exportAsynchronouslyWithCompletionHandler:^{
-        switch (exportSession.status)
-        {
-            case AVAssetExportSessionStatusCompleted:
-                NSLog(@"Export OK");
-//                if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath)) {
-//                    UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
-//                }
-                break;
-            case AVAssetExportSessionStatusFailed:
-                NSLog (@"AVAssetExportSessionStatusFailed: %@", exportSession.error);
-                break;
-            case AVAssetExportSessionStatusCancelled:
-                NSLog(@"Export Cancelled");
-                break;
-        }
-    }];
-
-
+//
+//
     
     
     
@@ -274,6 +278,12 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 }
 
 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType; {
+    
+    NSLog(@"start :  %@", request.URL.absoluteString   );
+    return YES;
+}
+
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     
@@ -283,11 +293,21 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSString *html =  [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('video')"];
 
     
+    
+    NSString *lJs = @"document.documentElement.innerHTML";
+    NSString *lHtml1 = [webView stringByEvaluatingJavaScriptFromString:lJs];
+//    NSLog(@"html内容:%lu",(unsigned long)lHtml1.length);
+    
+    // NSString *lJs2 = @"(document.getElementsByTagName(\"video\")[0]).getElementsByTagName(\"source\")[0].src";  //qiyi
+    NSString *lJs2 = @"(document.getElementsByTagName(\"video\")[0]).src";// youku,tudou,ku6 ,souhu
+    NSString *lm3u8 = [webView stringByEvaluatingJavaScriptFromString:lJs2];
+    NSLog(@"video source:%@",lm3u8);
+    
+    
 
-           NSString *str = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('video')[0].getAttribute('src');"];
+//           NSString *str = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('video')[0].getAttribute('src');"];
     
 //    if (![str isEqualToString:@""])
 //    {
@@ -327,7 +347,7 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 //                     //NSLog(@"地址信息=======%@",str);
 //              }
 
-NSLog(@"Web获取视频地址信息=======%@",str);
+//NSLog(@"Web获取视频地址信息=======%@",str);
 
 
 
@@ -335,6 +355,10 @@ NSLog(@"Web获取视频地址信息=======%@",str);
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+    NSURLRequest *r =webView.request;
+    
+    
+//    NSLog(@"url : %@", r.URL.absoluteString);
     
     
     
