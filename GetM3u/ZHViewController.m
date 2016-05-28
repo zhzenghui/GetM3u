@@ -296,6 +296,7 @@ static void *AVPlayerDemoPlaybackViewControllerCurrentItemObservationContext = &
 //  jxxx
     
     
+    
     NSString *lJs = @"document.documentElement.innerHTML";
     NSString *lHtml1 = [webView stringByEvaluatingJavaScriptFromString:lJs];
 //    NSLog(@"html内容:%lu",(unsigned long)lHtml1.length);
